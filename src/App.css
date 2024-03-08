@@ -1,0 +1,119 @@
+.global-container {
+  margin: 0 auto;
+  max-width: min(40rem, 100%);
+
+}
+
+li {
+  list-style: none;
+}
+
+.todo-list {
+  background-color: #D9D9D9;
+  padding: 3rem;
+
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: white;
+  border: 1px solid black;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.todo h3 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.todo button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.todo-detail-container {
+  background-color: #D9D9D9;
+  padding: 2rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+
+.todo-detail {
+  margin: 1rem 0;
+  background-color: white;
+  border: 1px solid black;
+  padding: 1rem;
+  width: 100%;
+}
+
+.todolist-div .add {
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  margin-top: 2.5rem;
+  background-color: #D9D9D9;
+  border: none;
+  padding: 0.5rem 2rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.form-group {
+  background-color: #D9D9D9;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-group input,
+textarea {
+  background-color: white;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.form-group input {
+  padding: 0.5rem 1rem;
+
+}
+
+.form-group textarea {
+  padding: 0.5rem 0rem 5rem 1rem;
+
+}
+
+.form button {
+  display: block;
+  cursor: pointer;
+}
+
+.create,
+.back {
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 2.5rem;
+  background-color: #D9D9D9;
+  border: none;
+  padding: 0.5rem 2rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+p {
+  overflow-wrap: break-word;
+}
