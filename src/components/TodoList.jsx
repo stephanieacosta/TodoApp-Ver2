@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  deleteTodo,
+  toggleStatus,
+  deleteAllTodos,
+} from "../context/slices/todoSlice";
 
-function TodoList({ todos, deleteTodo }) {
-  const handleDelete = (id) => {
-    deleteTodo(id);
-  };
+function TodoList() {
+  const dispatch = useDispatch();
+  const todos = useSelector((state) => state.todo);
+
   return (
     <div className="todolist-div">
       <h2
@@ -21,15 +27,33 @@ function TodoList({ todos, deleteTodo }) {
         {todos.map((todo) => (
           <div key={todo.id} className="todo">
             <Link to={`/todos/${todo.id}`}>
-              <h3>{todo.title}</h3>
+              <h3 style={{ width: "24rem" }}>{todo.title}</h3>
             </Link>
-            <button onClick={() => handleDelete(todo.id)}>X</button>
+            <button
+              onClick={() => dispatch(toggleStatus(todo.id))}
+              style={{
+                color: todo.completed ? "green" : "red",
+                cursor: "pointer",
+                fontSize: "1.1rem",
+                backgroundColor: "lightgray",
+                border: "1px solid black",
+                borderRadius: "5px",
+                padding: "0.5rem",
+                fontWeight: "600",
+              }}
+            >
+              {todo.completed ? "Completed" : "Pending"}
+            </button>
+            <button onClick={() => dispatch(deleteTodo(todo.id))}>X</button>
           </div>
         ))}
       </div>
       <Link to="/todos/new">
         <button className="add">NEW Todo</button>
       </Link>
+      <button className="deleteall" onClick={() => dispatch(deleteAllTodos())}>
+        Reset all
+      </button>
     </div>
   );
 }

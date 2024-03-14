@@ -1,8 +1,11 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-function TodoDetail({ todos }) {
+function TodoDetail() {
   const { id } = useParams();
+  const todos = useSelector((state) => state.todo);
+
   const todo = todos.find((todo) => todo.id === parseInt(id));
 
   if (!todo) {

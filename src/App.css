@@ -54,7 +54,8 @@ li {
   width: 100%;
 }
 
-.todolist-div .add {
+.todolist-div .add,
+.deleteall {
   display: block;
   margin: auto;
   cursor: pointer;

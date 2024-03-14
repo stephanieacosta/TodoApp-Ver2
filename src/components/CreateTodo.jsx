@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../context/slices/todoSlice";
 
-function CreateTodo({ addTodo }) {
+function CreateTodo() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +20,7 @@ function CreateTodo({ addTodo }) {
       description,
       createdAt: new Date(),
     };
-    addTodo(newTodo);
+    dispatch(addTodo(newTodo));
     navigate("/");
   };
 
