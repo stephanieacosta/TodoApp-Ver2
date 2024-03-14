@@ -5,7 +5,7 @@ import {
   deleteTodo,
   toggleStatus,
   deleteAllTodos,
-} from "../context/slices/todoSlice";
+} from "../redux/slices/todoSlice";
 
 function TodoList() {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../context/slices/todoSlice";
+import { addTodo } from "../redux/slices/todoSlice";
 
 function CreateTodo() {
   const [title, setTitle] = useState("");
